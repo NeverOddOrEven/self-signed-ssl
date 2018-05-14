@@ -33,5 +33,15 @@ openssl req -config cert.config -new -sha256 -newkey rsa:2048 -nodes \
     -keyout output/localhost.key.pem -days 365 -out output/localhost.req.pem
 ```
 
+## Testing
+
+You can run the simple Node server in the [./server](./server) directory, and then use curl passing the self-signed certificate.
+
+```bash
+node server/index.js
+curl http://localhost:8180
+curl https://localhost:8181 --cacert output/localhost.cert.pem
+```
+
 ## Credit
 Go to the original [Stack Overflow question](https://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl).
