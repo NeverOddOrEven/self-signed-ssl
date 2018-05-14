@@ -35,12 +35,10 @@ openssl req -config cert.config -new -sha256 -newkey rsa:2048 -nodes \
 
 ## Testing
 
-You can run the simple Node server in the [./server](./server) directory, and then use curl passing the self-signed certificate.
+Start a simple NodeJs server and call with curl, passing the self-signed cert to validate `HTTPS`.
 
 ```bash
-node server/index.js
-curl http://localhost:8180
-curl https://localhost:8181 --cacert output/localhost.cert.pem
+./test.sh
 ```
 
 ## Credit
