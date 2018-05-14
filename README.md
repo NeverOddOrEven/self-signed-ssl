@@ -12,11 +12,18 @@ openssl req -config cert.conf -new -x509 \
     -out output/localhost.cert.pem
 ```
 
+Show the certificate details
+```bash
+openssl x509 -in output/localhost.cert.pem -text -noout
+```
+
 Create a signing request
 ```bash
 openssl req -config cert.conf -new -sha256 -newkey rsa:2048 -nodes \
     -keyout output/localhost.key.pem -days 365 -out output/localhost.req.pem
 ```
+
+
 
 # Credit
 Go to the original [Stack Overflow question](https://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl).
