@@ -16,7 +16,7 @@ From your shell:
 Create a self-signed localhost certificate 
 ```bash
 mkdir -p output
-openssl req -config cert.conf -new -x509 \
+openssl req -config cert.config -new -x509 \
     -sha256 -newkey rsa:2048 -nodes \
     -keyout output/localhost.key.pem -days 365 \
     -out output/localhost.cert.pem
@@ -29,7 +29,7 @@ openssl x509 -in output/localhost.cert.pem -text -noout
 
 Create a signing request
 ```bash
-openssl req -config cert.conf -new -sha256 -newkey rsa:2048 -nodes \
+openssl req -config cert.config -new -sha256 -newkey rsa:2048 -nodes \
     -keyout output/localhost.key.pem -days 365 -out output/localhost.req.pem
 ```
 
